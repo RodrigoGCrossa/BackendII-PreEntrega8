@@ -1,0 +1,34 @@
+{
+  "name": "eventos-preentrega-8",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plataforma de eventos — arquitectura DAO, Repository y DTO",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/*.test.js",
+    "test:integration": "node --test tests/integration/*.test.js",
+    "user:role": "node scripts/set-role.js",
+    "test:api": "node --test tests/api/*.test.js",
+    "test:contracts": "node --import ./tests/helpers/inprocess-env.js --test tests/api/*.test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "dotenv": "^16.6.1",
+    "mongoose": "^8.19.1",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "passport-jwt": "^4.0.1",
+    "nodemailer": "^7.0.9"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.4"
+  }
+}

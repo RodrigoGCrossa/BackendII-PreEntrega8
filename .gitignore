@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+.DS_Store
+AGENTS.md
+ENTREGAS.md
+consignas/
+seguimiento/
+PUBLICAR_REPOS.sh
+cookies*.txt
+VERIFICAR_ENTREGAS.sh

@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import * as controller from '../controllers/events.controller.js';
+import { auth } from '../middlewares/auth.middleware.js';
+import { authorize } from '../middlewares/authorize.middleware.js';
+import { createTicket, eventTickets } from '../controllers/tickets.controller.js';
+export const eventsRouter = Router();
+eventsRouter.get('/', controller.getEvents);
+eventsRouter.post('/', auth, authorize('organizer', 'admin'), controller.postEvent);
+eventsRouter.put('/:id', auth, authorize('organizer', 'admin'), controller.putEvent);
+eventsRouter.get('/:id', controller.getEvent);
+eventsRouter.patch('/:id/status', auth, authorize('organizer', 'admin'), controller.patchStatus);
+eventsRouter.post('/:eid/tickets', auth, createTicket);
+eventsRouter.get('/:eid/tickets', auth, authorize('organizer', 'admin'), eventTickets);
